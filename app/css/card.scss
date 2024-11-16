@@ -1,0 +1,41 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card {
+  position: relative;
+  overflow: hidden; /* Ensure children don't overflow */
+}
+
+.glow-card::after,
+.glow-card::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #4400f1, #15003f, #006aff, #ac00e0, #0e001f);
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 3px;
+  border-radius: 4px;
+ 
+  animation: spin 3s ease infinite;
+}
+
+.glow-card::before {
+  filter: blur(8rem);
+  opacity: 0;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
