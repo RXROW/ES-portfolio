@@ -62,7 +62,7 @@ const Gallery = () => {
   return (
     <div className="p-4 ">
       {/* Category Buttons */}
-      <div className="flex justify-center space-x-4 mb-6">
+      <div className="flex justify-center flex-wrap items-center gap-4 mb-6">
         {categories.map((category) => (
           <button
             key={category}

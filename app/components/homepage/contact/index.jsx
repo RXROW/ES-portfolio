@@ -36,7 +36,7 @@ function ContactSection() {
 
       <div className=" mt-10 flex flex-col justify-center items-center gap-10 lg:gap-16">
         <p className=" text-white uppercase">Contact With Me</p>
-        <div className=" max-w-2xl text-white rounded-md ring-1 ring-[#7f0fff7d] p-24">
+        <div className=" max-w-2xl text-white rounded-md ring-1 ring-[#7f0fff7d] p-10 sm:p-24">
           <p className=" text-sm text-[#d3d8e8] text-center">
             "If you have any questions or concerns, please don't hesitate to
             contact me. I am open to any work opportunities that align with my

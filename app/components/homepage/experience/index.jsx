@@ -72,7 +72,7 @@ const ExperienceCard = ({ award }) => {
       className="glow-card relative w-full p-4 bg-[#04051a]/80 rounded-lg border border-violet-900/20 hover:border-violet-500/50 transition-all duration-300"
     >
       {/* Type Badge */}
-      <div className="absolute right-4 top-4 flex gap-2">
+      <div className="absolute right-4 top-12 sm:top-4 flex gap-2">
         <span className="text-xs bg-[#16f2b3] rounded-full text-black px-3 py-1">
           {award.type}
         </span>
