@@ -1,74 +1,102 @@
+"use client"
 import React from 'react';
-import Image from "next/image";
- import { TbShoppingBagSearch } from "react-icons/tb";
-import { BsSearchHeart } from "react-icons/bs";
-import { IoCodeSlashSharp } from "react-icons/io5";
+ import { motion } from 'framer-motion';
+ import Image from "next/image";
 
-// Update the ServicesData to store the actual icon components
 export const ServicesData = [
   {
     id: 1,
     title: "Web Development",
-    icon: <IoCodeSlashSharp size={48} />,
-    service: "Custom website development tailored to your business needs, including responsive design and user-friendly interfaces."
+    icon: "💻",
+    service: "Custom website development tailored to your business needs, including responsive design and user-friendly interfaces.",
+    gradient: "from-blue-600 to-cyan-500"
   },
   {
     id: 2,
     title: "E-commerce Solutions",
-    icon: <TbShoppingBagSearch size={48} />,
-    service: "Complete e-commerce solutions featuring secure payment gateways, inventory management, and a seamless shopping experience."
+    icon: "🛍️",
+    service: "Complete e-commerce solutions featuring secure payment gateways, inventory management, and a seamless shopping experience.",
+    gradient: "from-purple-600 to-pink-500"
   },
   {
     id: 3,
     title: "SEO Optimization",
-    icon: <BsSearchHeart size={48} />,
-    service: "Search engine optimization services to improve your website's visibility and rank higher on search engine results pages."
+    icon: "🎯",
+    service: "Search engine optimization services to improve your website's visibility and rank higher on search engine results pages.",
+    gradient: "from-orange-500 to-yellow-500"
   }
 ];
 
-function Services() {
+const Services = () => {
   return (
-    <div id="education" className="relative border-t my-12 border-[#25213b] py-16">
-      {/* Background Image */}
-      <Image
-        src="/hero.svg"
-        alt="Hero background"
-        width={1570}
-        height={790}
-        className="absolute top-0 -z-10 w-full"
-      />
+    <section id="services"     
+    className="relative   border-t my-12 border-[#25213b] py-16"
+  >
+    {/* Background Image */}
+    <Image
+      src="/hero.svg"
+      alt="Hero background"
+      width={1570}
+      height={790}
+      className="absolute top-0   -z-10"
+    />
 
-      {/* Title */}
-      <h2 className="text-pink-500 text-sm mb-12 flex justify-center uppercase tracking-widest">
-        [Services]
-      </h2>
+    {/* About Me Title */}
+    <div className=" sticky top-10 ">
+    <h2 className="text-pink-500 text-[14px] mb-12 flex justify-center uppercase tracking-widest">
+      [My Projects]
+    </h2>
+    </div>
 
-      {/* Divider Line */}
-      <div className="flex justify-center">
-        <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent w-full"></div>
+      <div className="relative container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+         
+          </motion.div>
         </div>
-      </div>
 
-      <div className="py-8 relative">
-        <div className="absolute top-[30%] hidden md:block left-0 rounded-md bg-gradient-to-r from-[#470ecd] to-[#8f00fd] w-full h-32"></div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 z-10">
-          {ServicesData.map((ser) => (
-            <div
-              key={ser.id}
-              className="text-center text-white z-30 backdrop-blur-2xl bg-violet-800/20 rounded-sm hover:ring-1 ring-violet-500 transition-all duration-500 hover:scale-105"
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {ServicesData.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative"
             >
-              <div className="flex items-center justify-center flex-col mt-4">
-                {ser.icon}
+              <div className="relative p-8 ring-1 ring-purple-500/30  rounded-2xl transition-all duration-300 hover:translate-y-[-5px] hover:shadow-2xl">
+                {/* Gradient border effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
+                
+                {/* Service content */}
+                <div className="relative z-10">
+                  <div className="mb-4">
+                    <span className="text-4xl">{service.icon}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    {service.service}
+                  </p>
+                  
+                 
+                </div>
               </div>
-              <h2 className="text-2xl p-4">{ser.title}</h2>
-              <p className="p-3 text-slate-300 leading-7">{ser.service}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default Services;

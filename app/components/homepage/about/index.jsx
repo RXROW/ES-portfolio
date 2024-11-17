@@ -1,8 +1,9 @@
-"use client" 
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import { BsGithub, BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { motion } from "framer-motion"; // Import Framer Motion for animations
+import { motion } from "framer-motion";
+
 
 export const personalData = {
   name: "ESLAM AHMED",
@@ -24,12 +25,83 @@ export const personalData = {
 };
 
 const AboutSection = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const titleVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.3
+      }
+    }
+  };
+
+  const socialIconVariants = {
+    hover: {
+      scale: 1.1,
+      rotate: 5,
+      transition: {
+        duration: 0.2,
+        type: "spring",
+        stiffness: 300
+      }
+    },
+    tap: {
+      scale: 0.95
+    }
+  };
+
   return (
-    <div
+    <motion.div
       id="about"
       className="relative border-t my-12 border-[#25213b] py-16"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
     >
-      {/* Background Image */}
       <Image
         src="/hero.svg"
         alt="Hero background"
@@ -38,110 +110,128 @@ const AboutSection = () => {
         className="absolute top-0 -z-10"
       />
 
-      {/* About Me Title */}
       <motion.h2
+        variants={titleVariants}
         className="text-pink-500 text-[14px] mb-12 flex justify-center uppercase tracking-widest"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        whileHover={{ scale: 1.1 }}
       >
         [About Me]
       </motion.h2>
 
-      {/* Main Content */}
-      <div className="flex justify-center">
+      <motion.div className="flex justify-center" variants={itemVariants}>
         <div className="w-3/4">
-          {/* Divider Line */}
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent w-full"></div>
+          <motion.div 
+            className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent w-full"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
         </div>
-      </div>
+      </motion.div>
 
-      {/* About Section Content */}
       <div className="flex justify-center mt-10">
         <div className="w-3/4 text-white flex flex-col md:flex-row md:justify-between items-center gap-10">
-          {/* Personal Info */}
           <motion.div
             className="md:w-1/2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
+            variants={itemVariants}
           >
-            <div className="mb-8 text-center md:text-left">
+            <motion.div className="mb-8 text-center md:text-left" variants={itemVariants}>
               <motion.h3
                 className="text-4xl font-bold text-violet-400"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, color: "#16f2b3" }}
+                transition={{ duration: 0.2 }}
               >
                 {personalData?.name}
               </motion.h3>
-              <p className="text-gray-400 text-lg mt-2">{personalData?.designation}</p>
-            </div>
+              <motion.p 
+                className="text-gray-400 text-lg mt-2"
+                variants={itemVariants}
+              >
+                {personalData?.designation}
+              </motion.p>
+            </motion.div>
 
-            <div className="mb-8 text-center md:text-left">
-              <h4 className="text-2xl font-semibold text-[#16f2b3]">Who I am?</h4>
-              <p className="text-gray-300 mt-4">{personalData?.description}</p>
-            </div>
+            <motion.div 
+              className="mb-8 text-center md:text-left"
+              variants={itemVariants}
+            >
+              <motion.h4 
+                className="text-2xl font-semibold text-[#16f2b3]"
+                whileHover={{ scale: 1.05 }}
+              >
+                Who I am?
+              </motion.h4>
+              <motion.p 
+                className="text-gray-300 mt-4"
+                variants={itemVariants}
+              >
+                {personalData?.description}
+              </motion.p>
+            </motion.div>
 
-            {/* Social Links */}
-            <div className="flex justify-center md:justify-start items-center gap-5 mt-6">
-              <motion.a
-                href={personalData?.github}
-                target="_blank"
-                className="social-icon bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
-                whileHover={{ scale: 1.1 }}
-              >
-                <BsGithub className=" hover:text-purple-500 text-xl" />
-              </motion.a>
-              <motion.a
-                href={personalData?.facebook}
-                target="_blank"
-                className="social-icon bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
-                whileHover={{ scale: 1.1 }}
-              >
-                <BsFacebook className=" hover:text-purple-500 text-xl" />
-              </motion.a>
-              <motion.a
-                href={personalData?.linkedIn}
-                target="_blank"
-                className="social-icon bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
-                whileHover={{ scale: 1.1 }}
-              >
-                <BsLinkedin className=" hover:text-purple-500 text-xl" />
-              </motion.a>
-              <motion.a
-                href={personalData?.twitter}
-                target="_blank"
-                className="social-icon bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
-                whileHover={{ scale: 1.1 }}
-              >
-                <BsTwitter className=" hover:text-purple-500 text-xl" />
-              </motion.a>
-            </div>
+            <motion.div 
+              className="flex justify-center md:justify-start items-center gap-5 mt-6"
+              variants={itemVariants}
+            >
+              {[
+                { href: personalData?.github, icon: BsGithub },
+                { href: personalData?.facebook, icon: BsFacebook },
+                { href: personalData?.linkedIn, icon: BsLinkedin },
+                { href: personalData?.twitter, icon: BsTwitter }
+              ].map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  className="social-icon bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
+                  variants={socialIconVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <social.icon className="hover:text-purple-500 text-xl" />
+                </motion.a>
+              ))}
+            </motion.div>
           </motion.div>
 
-          {/* Profile Image */}
-          <div className="w-full md:w-auto flex items-center flex-col">
+          <motion.div 
+            className="w-full md:w-auto flex items-center flex-col"
+            variants={imageVariants}
+          >
             <motion.div
               className="w-80 rounded-b-md flex items-center justify-center flex-col bg-violet-950/40"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 2, duration: 0.8 }}
+              variants={imageVariants}
+              whileHover="hover"
             >
-              <Image
-                src={personalData.profile}
-                width={650}
-                height={200}
-                alt="Profile Image"
-                className="portfolioImag cursor-pointer rounded-t-md transition-all duration-700 hover:blur-sm hover:grayscale"
-              />
-              <div className="flex items-center flex-col py-2">
+              <motion.div
+                whileHover={{
+                  filter: "blur(4px) grayscale(100%)",
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <Image
+                  src={personalData.profile}
+                  width={650}
+                  height={200}
+                  alt="Profile Image"
+                  className="portfolioImag cursor-pointer rounded-t-md transition-all duration-700"
+                />
+              </motion.div>
+              <motion.div 
+                className="flex items-center flex-col py-2"
+                variants={itemVariants}
+              >
                 <p className="font-semibold text-lg">Developer</p>
                 <p>4/12</p>
-              </div>
+              </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
