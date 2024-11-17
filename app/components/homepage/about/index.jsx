@@ -1,24 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BsGithub, BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
- export const personalData = {
+export const personalData = {
   name: "ESLAM AHMED",
-  profile: "/profile.jpg",
-  designation: "Based in Melbourne",
+  profile: "https://res.cloudinary.com/dyv3dluov/image/upload/v1731782506/portfolio/esarihtrv3y86twshgoh.jpg",
+
+  designation: "Using Mern Stack",
   description:
-    "As a graphic designer and web developer, I specialize in transforming linguistic messages into engaging visual content. From client requirements to final designs, my goal is to ensure impactful communication through compelling visuals.",
-  email: "frontendadvance@gmail.com",
+  "I am a passionate MERN Stack web developer with expertise in building dynamic, scalable web applications using MongoDB, Express.js, React.js, and Node.js. I focus on creating efficient, user-centric solutions that address real-world challenges, delivering high-quality results through intuitive interfaces, robust backend systems, and advanced features.",
+    email: "frontendadvance@gmail.com",
   phone: "+94432 22111",
   address: "Middle Perth, Melbourne, Australia - 22002",
-  github: "https://github.com",
-  facebook: "https://www.facebook.com",
-  linkedIn: "https://www.linkedin.com",
+  github: "https://github.com/RXROW",
+  facebook: "https://www.facebook.com/eslam.almasody?mibextid=ZbWKwL",
+  linkedIn: "https://www.linkedin.com/in/rxrow/",
   twitter: "https://twitter.com",
   stackOverflow: "https://stackoverflow.com",
   leetcode: "https://leetcode.com",
   devUsername: "",
   resume: "",
 };
+
 const AboutSection = () => {
   return (
     <div
@@ -73,28 +75,28 @@ const AboutSection = () => {
               <Link
                 href={personalData?.github}
                 target="_blank"
-                className="social-icon bg-violet-500 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
+                className="social-icon bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
               >
                 <BsGithub className=" hover:text-purple-500 text-xl" />
               </Link>
               <Link
                 href={personalData?.facebook}
                 target="_blank"
-                className="social-icon bg-violet-500 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300 "
+                className="social-icon bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300 "
               >
                 <BsFacebook className=" hover:text-purple-500 text-xl" />
               </Link>
               <Link
                 href={personalData?.linkedIn}
                 target="_blank"
-                className="social-icon bg-violet-500 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
+                className="social-icon bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
               >
                 <BsLinkedin className=" hover:text-purple-500 text-xl" />
               </Link>
               <Link
                 href={personalData?.twitter}
                 target="_blank"
-                className="social-icon  bg-violet-500 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
+                className="social-icon  bg-violet-900 rounded-full p-4 hover:bg-transparent hover:ring-1 ring-purple-500 translate-all duration-300"
               >
                 <BsTwitter className=" hover:text-purple-500 text-xl" />
               </Link>
@@ -109,7 +111,7 @@ const AboutSection = () => {
                 width={650}
                 height={200}
                 alt="Profile Image"
-                className=" cursor-pointer rounded-t-md transition-all duration-700 blur-0 hover:blur-sm hover:grayscale "
+                className=" portfolioImag cursor-pointer rounded-t-md transition-all duration-700 blur-0 hover:blur-sm hover:grayscale "
               />
               <div className=" flex items-center flex-col py-2 ">
                 <p className=" font-semibold text-lg">Devloper </p>

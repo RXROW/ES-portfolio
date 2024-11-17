@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const Projects = [
   {
     id: 1,
     category: "Frontend",
-    src: "/img-1.png",
+    srcImage: "https://res.cloudinary.com/dyv3dluov/image/upload/v1726836415/Home_malhgv.png",
     alt: "Project 1",
     title: "Frontend Project 1",
     des: "Description of Project 1",
@@ -13,7 +14,7 @@ const Projects = [
   {
     id: 2,
     category: "Backend",
-    src: "/img-2.png",
+    srcImage: "https://res.cloudinary.com/dyv3dluov/image/upload/v1726836415/Home_malhgv.png",
     alt: "Project 2",
     title: "Backend Project 2",
     des: "Description of Project 2",
@@ -22,7 +23,7 @@ const Projects = [
   {
     id: 4,
     category: "Backend",
-    src: "/img-2.png",
+    srcImage: "https://res.cloudinary.com/dyv3dluov/image/upload/v1726836415/Home_malhgv.png",
     alt: "Project 2",
     title: "Backend Project 2",
     des: "Description of Project 2",
@@ -31,7 +32,7 @@ const Projects = [
   {
     id: 3,
     category: "Fullstack",
-    src: "/img-1.png",
+    srcImage: "https://res.cloudinary.com/dyv3dluov/image/upload/v1726836415/Home_malhgv.png",
     alt: "Project 3",
     title: "Fullstack Project 3",
     des: "Description of Project 3",
@@ -68,7 +69,7 @@ const Gallery = () => {
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded-sm  hover:px-6 transition-all duration-300 ${
               selectedCategory === category
-                ? " bg-violet-500 text-white"
+                ? " bg-violet-950 text-white"
                 : "bg-gray-200"
             } hover:bg-violet-800 hover:text-white`}
           >
@@ -84,10 +85,12 @@ const Gallery = () => {
             className="overflow-hidden  bg-[#5a29c51c]  pb-3 rounded-md transform transition duration-500 ring-1 ring-transparent hover:ring-[#610bff] cursor-pointer "
           >
             <div className=" overflow-hidden">
-              <img
-                src={pro.src}
+              <Image
+                src={pro.srcImage}
                 alt={pro.alt}
-                className="w-full opacity-0 animate-fade-in hover:scale-110 hover:rotate-3 transform transition duration-500 "
+                width={600}
+                height={800}
+                className="w-full opacity-1 animate-fade-in hover:scale-110 hover:rotate-3 transform transition duration-500 "
                 style={{ animationDelay: `${pro.id * 100}ms` }}
               />
             </div>

@@ -16,12 +16,12 @@ function BlogCard({
 }) {
   return (
     <div className="border border-[#1b293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e]/20 rounded-md relative">
-      <div className="overflow-hidden rounded-t-md">
+      <div className="overflow-hidden h-96 rounded-t-md">
         <Image
           src={blog.image}
           alt={blog.title || "Blog Image"}
           width={600}
-          height={500}
+          height={400}
           className="h-full w-full hover:scale-110 transition-all duration-300 object-cover"
         />
       </div>

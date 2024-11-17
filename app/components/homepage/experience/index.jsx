@@ -8,26 +8,33 @@ const awards = [
     id: 1,
     title: "Website of the day",
     company: "Awwwards",
-    duration: "June, 2023"
+    duration: "June, 2023",
+    image:"https://res.cloudinary.com/dyv3dluov/image/upload/v1731782511/portfolio/qvhdbwjj3ygbrhgaggxd.png"
   },
  
   {
     id: 3,
     title: "Website of the day",
     company: "Awwwards",
-    duration: "June, 2023"
+    duration: "June, 2023",
+    image:"https://res.cloudinary.com/dyv3dluov/image/upload/v1731782511/portfolio/qvhdbwjj3ygbrhgaggxd.png"
+
   },
   {
     id: 512,
     title: "Website of the day",
     company: "Awwwards",
-    duration: "June, 2023"
+    duration: "June, 2023",
+    image:"https://res.cloudinary.com/dyv3dluov/image/upload/v1731782511/portfolio/qvhdbwjj3ygbrhgaggxd.png"
+
   },
   {
     id: 65,
     title: "Website of the day",
     company: "Awwwards",
-    duration: "June, 2023"
+    duration: "June, 2023",
+    image:"https://res.cloudinary.com/dyv3dluov/image/upload/v1731782511/portfolio/qvhdbwjj3ygbrhgaggxd.png"
+
   },
  
  
@@ -73,14 +80,7 @@ function Experience() {
           identifier={`award-${award.id}`}
           className="glow-card relative w-full p-2 bg-[#04051a] rounded-sm flex flex-col"
         >
-          {/* Background Blur Image */}
-          <Image
-            src="/blur-23.png"
-            alt="Blur effect"
-            width={1080}
-            height={200}
-            className="w-full absolute bottom-0 left-0 right-0 opacity-70 pointer-events-none"
-          />
+     
 
           {/* Award Duration */}
           <div className="absolute right-4 top-[36%]">
@@ -92,7 +92,7 @@ function Experience() {
           {/* Award Content */}
           <div className="relative z-10 flex items-center gap-x-8 px-3 py-4">
             <Image
-              src="/placeholder.png"
+              src={award.image}
               width={100}
               height={50}
               alt="Award"

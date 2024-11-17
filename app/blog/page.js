@@ -20,7 +20,7 @@ function page() {
     {
       title: "Understanding JavaScript Closures",
       description: "A deep dive into closures, one of JavaScript's most powerful features.",
-      image: "https://via.placeholder.com/1080x900?text=JavaScript+Closures",
+      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1723862700/mongodb_cours_cc597221ce.jpg",
       date: "2024-11-01T10:00:00Z",
       comments_count: 12,
       hearts_count: 150,
@@ -28,7 +28,7 @@ function page() {
     {
       title: "Getting Started with React Hooks",
       description: "Learn how to leverage hooks to write cleaner, functional React components.",
-      image: "https://via.placeholder.com/1080x900?text=React+Hooks",
+      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1723861849/thumbnail_next_js_b471d2b8b7.png",
       date: "2024-10-25T08:30:00Z",
       comments_count: 30,
       hearts_count: 200,
@@ -36,7 +36,7 @@ function page() {
     {
       title: "Exploring the Latest in Next.js 15",
       description: "A look at the new features and improvements in Next.js 15 for developers.",
-      image: "https://via.placeholder.com/1080x900?text=Next.js+15",
+      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1723862133/js_7ac4753a71.jpg",
       date: "2024-09-20T15:45:00Z",
       comments_count: 5,
       hearts_count: 80,

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import Logo from "./Logo";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full p-4 z-50 mb-20 bg-black/20 backdrop-blur-md ">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-xl font-bold">MyLogo</div>
+        <div className="text-white text-xl font-bold"> <Logo/> </div>
         <div className="flex items-center">
           {/* Hamburger Icon for Mobile */}
           <button

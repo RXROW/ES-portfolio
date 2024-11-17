@@ -7,10 +7,10 @@ import {FaDownload } from "react-icons/fa"; // Example icons
 export const personalData = {
   name: "ESLAM AHMED",
   profile: "/profile.png",
-  designation: "Based in Melbourne",
+  designation: "Using Mern Stack",
   description:
-    "As a graphic designer and web developer, I specialize in transforming linguistic messages into engaging visual content. From client requirements to final designs, my goal is to ensure impactful communication through compelling visuals.",
-  email: "frontendadvance@gmail.com",
+  "I am a passionate MERN Stack web developer with expertise in building dynamic, scalable web applications using MongoDB, Express.js, React.js, and Node.js. I focus on creating efficient, user-centric solutions that address real-world challenges, delivering high-quality results through intuitive interfaces, robust backend systems, and advanced features.",
+    email: "frontendadvance@gmail.com",
   phone: "+94432 22111",
   address: "Middle Perth, Melbourne, Australia - 22002",
   github: "https://github.com",
