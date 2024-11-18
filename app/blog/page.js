@@ -20,7 +20,7 @@ function page() {
     {
       title: "Understanding JavaScript Closures",
       description: "A deep dive into closures, one of JavaScript's most powerful features.",
-      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1723862700/mongodb_cours_cc597221ce.jpg",
+      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1731859000/portfolio/cnv4fqjex3kf3o7pww6c.png",
       date: "2024-11-01T10:00:00Z",
       comments_count: 12,
       hearts_count: 150,
@@ -28,7 +28,7 @@ function page() {
     {
       title: "Getting Started with React Hooks",
       description: "Learn how to leverage hooks to write cleaner, functional React components.",
-      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1723861849/thumbnail_next_js_b471d2b8b7.png",
+      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1731858383/portfolio/kxftfjnzumivk16wwf7o.png",
       date: "2024-10-25T08:30:00Z",
       comments_count: 30,
       hearts_count: 200,
@@ -36,7 +36,7 @@ function page() {
     {
       title: "Exploring the Latest in Next.js 15",
       description: "A look at the new features and improvements in Next.js 15 for developers.",
-      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1723862133/js_7ac4753a71.jpg",
+      image: "https://res.cloudinary.com/dyv3dluov/image/upload/v1731858383/portfolio/u8z9shd9nbunf02epjls.png",
       date: "2024-09-20T15:45:00Z",
       comments_count: 5,
       hearts_count: 80,
@@ -45,7 +45,7 @@ function page() {
 
 
   return (
-    <div id="education" className="relative border-t my-12 border-[#25213b] py-16">
+    <div id="blogs" className="relative border-t my-12 border-[#25213b] py-16">
       {/* Background Image */}
       <Image
         src="/hero.svg"

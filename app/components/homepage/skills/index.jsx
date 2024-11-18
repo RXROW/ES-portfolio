@@ -1,6 +1,5 @@
 import React from "react";
-import { skillsImage } from "../../../../utils/skill-image";
-import { skillsData } from "../../../../utils/data/skills";
+import { skillsData2 } from "../../../../utils/data/skills";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
@@ -28,50 +27,40 @@ function Skills() {
           <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent w-full"></div>
         </div>
       </div>
-      <div className=" w-full mt-12 ">
+
+      <div className="w-full mt-12">
         <Marquee gradient={false} speed={80} pauseOnHover>
-
-
-        {
-          skillsData.map((skill,id)=>
-            <div key={id} className=" w-36 min-w-fit h-fit flex items-center flex-col justify-center transition-all duration-500 m-3  sm:m-5 rounded-sm group  relative cursor-pointer  ">
-              <div className=" h-full w-full border border-[#1f223c] bg-[#030025]/40 shadow-gray-50 rounded-sm  group-hover:border-violet-500 transition-all duration-500   ">
-                <div className=" flex justify-center -translate-y-[1px] ">
+          {skillsData2.map((skill, id) => (
+            <div
+              key={id}
+              className="w-36 min-w-fit h-fit flex items-center flex-col justify-center transition-all duration-500 m-3 sm:m-5 rounded-sm group relative cursor-pointer"
+            >
+              <div className="h-full w-full border border-[#1f223c] bg-[#030025]/40 shadow-gray-50 rounded-sm group-hover:border-violet-500 transition-all duration-500">
+                <div className="flex justify-center -translate-y-[1px]">
                   <div className="w-2/3">
-                  <div className=" h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent "></div>
+                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent"></div>
                   </div>
                 </div>
-                <div  className=" flex items-center  flex-col justify-center gap-3 p-6 ">
-                  <div className=" h-8 sm:h-10 ">
-                    <Image src={skillsImage(skill)?.src}
-                    alt="skills"
+                <div className="flex items-center flex-col justify-center gap-3 p-6">
+                  {/* Skill Image */}
+                  <div className=" h-12">
+                  <Image
+                    src={skill.image}
+                    alt={skill.name}
                     width={60}
                     height={60}
-                    className=" h-full w-auto rounded-sm"/>
+                    className="rounded-sm"
+                  />
                   </div>
-                  <p className=" text-sm sm:text-lg text-slate-100">
-                    {skill}
-                  </p>
+                
+                  {/* Skill Name */}
+                  <p className="text-sm sm:text-lg mt-2 text-slate-100">{skill.name}</p>
                 </div>
               </div>
-              
-               </div>
-          )
-        }
-                </Marquee>
+            </div>
+          ))}
+        </Marquee>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   );
 }

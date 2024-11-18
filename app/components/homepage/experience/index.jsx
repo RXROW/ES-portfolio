@@ -76,7 +76,7 @@ const ExperienceCard = ({ award }) => {
         <span className="text-xs bg-[#16f2b3] rounded-full text-black px-3 py-1">
           {award.type}
         </span>
-        <span className="text-xs bg-violet-500 rounded-full text-white px-3 py-1">
+        <span className="text-xs bg-violet-700 rounded-full text-white px-3 py-1">
           {award.location}
         </span>
       </div>

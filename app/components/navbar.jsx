@@ -16,7 +16,7 @@ function Navbar() {
         <div className="text-white text-xl font-bold"> <Logo/> </div>
         <div className="flex items-center">
           {/* Hamburger Icon for Mobile */}
-          <button
+          <button aria-label="Close"
             onClick={toggleMenu}
             className="text-white focus:outline-none lg:hidden"
           >
@@ -55,7 +55,7 @@ function Navbar() {
           <ul
             className={`fixed top-0 left-0 h-full transition-transform transform ${
               isOpen
-                ? "translate-x-0 bg-[#140735ea] w-64 h-screen pt-10 mt-14 backdrop-blur-md"
+                ? "translate-x-0 bg-[#0f0528]/90 w-64 h-screen pt-10 mt-14 backdrop-blur-md"
                 : "-translate-x-full"
             } lg:static lg:flex lg:flex-row lg:space-x-4 lg:translate-x-0`}
           >
@@ -69,7 +69,7 @@ function Navbar() {
             </li>
             <li className="mt-5 lg:mt-0">
               <Link
-                href="/"
+                href="#projects"
                 className="text-gray-300 hover:text-purple-800 uppercase hover:underline transition-all duration-200 block px-4 py-2"
               >
                 Projects
@@ -78,7 +78,7 @@ function Navbar() {
 
             <li className="mt-5 lg:mt-0">
               <Link
-                href="/"
+                href="#skills"
                 className="text-gray-300 hover:text-purple-800 uppercase hover:underline transition-all duration-200 block px-4 py-2"
               >
                 Skills
@@ -87,7 +87,7 @@ function Navbar() {
 
             <li className="mt-5 lg:mt-0">
               <Link
-                href="/"
+                href="#blogs"
                 className="text-gray-300 hover:text-purple-800 uppercase hover:underline transition-all duration-200 block px-4 py-2"
               >
                 Blog

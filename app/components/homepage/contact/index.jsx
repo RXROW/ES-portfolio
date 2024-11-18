@@ -73,11 +73,11 @@ function ContactSection() {
           </div>
           <div className=" text-white flex flex-col gap-4 mt-10">
             <div className=" flex flex-col items-start gap-2">
-              <label htmlFor="" className=" text-base">
-                Massage:
-              </label>
+         
+              <label htmlFor="message"  className="text-base">Message:</label>
               <textarea
                 type="text"
+                id="message"
                 className=" w-full bg-[#10172d] border rounded-md border-[#353a52] focus:border-[#6d1eff]  ring-0 outline-0 transition-all duration-300 px-3 py-2  "
                 rows={4}
                 required

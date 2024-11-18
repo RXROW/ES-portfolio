@@ -8,13 +8,7 @@ const TerminalBlock = () => {
   const [isCopied, setIsCopied] = useState(false);
 
   const codeStrings = [
-    {
-      text: `function <span class='text-yellow-400'>fibonacci</span>(<span class='text-blue-400'>n</span>) {
-  if (n <= 1) return n;
-  return fibonacci(n - 1) + fibonacci(n - 2);
-}`,
    
-    },
     {
       text: `const <span class='text-purple-400'>asyncFunction</span> = <span class='text-yellow-400'>async</span> () => {
   try {
@@ -73,7 +67,7 @@ const TerminalBlock = () => {
     `}>
       <div className={`
         bg-slate-900/20 text-gray-200 
-        rounded-lg shadow-2xl
+        rounded-md shadow-2xl
         border border-purple-500/30
         backdrop-blur-xl
         transition-all duration-300
@@ -83,15 +77,18 @@ const TerminalBlock = () => {
         <div className="border-b border-purple-500/30 p-3 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <button 
-              className="h-3 w-3 bg-red-500 rounded-full hover:bg-red-600 transition-colors"
+            aria-label="Close"
+              className="h-4 w-4 bg-red-500 rounded-full hover:bg-red-600 transition-colors"
               onClick={() => !isMaximized && window.history.back()}
             />
             <button 
-              className="h-3 w-3 bg-yellow-500 rounded-full hover:bg-yellow-600 transition-colors"
+            aria-label="Close"
+              className="h-4  w-4 bg-yellow-500 rounded-full hover:bg-yellow-600 transition-colors"
               onClick={() => setIsMaximized(!isMaximized)}
             />
             <button 
-              className="h-3 w-3 bg-green-500 rounded-full hover:bg-green-600 transition-colors"
+            aria-label="Close"
+              className="h-4 w-4 bg-green-500 rounded-full hover:bg-green-600 transition-colors"
               onClick={handleCopy}
             />
           </div>
