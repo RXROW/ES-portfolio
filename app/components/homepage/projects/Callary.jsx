@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight, Github, GithubIcon } from "lucide-react";
+import { ArrowUpRight, GithubIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Projects = [
   {
@@ -63,9 +64,11 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="group relative bg-slate-950 rounded-xl overflow-hidden transition-all duration-300 h-full">
       <div className="relative aspect-[16/10] overflow-hidden">
-        <img
+        <Image
           src={project.srcImage}
           alt={project.alt}
+          width={800}
+          height={1000}
           className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
