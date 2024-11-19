@@ -2,6 +2,7 @@ const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+ 
   reactStrictMode: false, 
   // Enable source maps in production
   webpack(config, { isServer }) {

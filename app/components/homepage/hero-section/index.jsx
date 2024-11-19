@@ -77,7 +77,7 @@ function HeroSection() {
               transition={{ delay: 1.2, duration: 0.8 }}
             >
               <Link
-                href="/resume.pdf"
+                href="#"
                 aria-label="Download resume"
                 passHref
                 download
